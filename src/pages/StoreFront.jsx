@@ -1,19 +1,23 @@
-import { initialProducts } from "../data/products";
-import ProductGrid from "../components/product/ProductGrid";
 import Navbar from "../components/layout/Navbar";
+import ProductGrid from "../components/product/ProductGrid";
+import Cart from "../components/cart/Cart";
+
+import { initialProducts } from "../data/products";
 
 function Storefront() {
   return (
     <>
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold">Featured Products</h2>
+      <div className="flex">
+        <main className="flex-1 p-8">
+          <h1 className="text-3xl font-bold mb-8">Featured Products</h1>
 
-        <p className="text-gray-500 mt-2 mb-8">Browse our latest collection</p>
+          <ProductGrid products={initialProducts} />
+        </main>
 
-        <ProductGrid products={initialProducts} />
-      </main>
+        <Cart />
+      </div>
     </>
   );
 }

@@ -1,4 +1,8 @@
+import { formatPHP } from "../../utils/currency";
+import { useCart } from "../../context/CartContext";
+
 function ProductCard({ product }) {
+  const { addToCart } = useCart();
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
       <img
@@ -10,9 +14,12 @@ function ProductCard({ product }) {
       <div className="p-4">
         <h3 className="font-semibold text-lg">{product.name}</h3>
 
-        <p className="text-blue-600 font-bold mt-2">${product.price}</p>
+        <p className="text-blue-600 font-bold mt-2">
+          {formatPHP(product.price)}
+        </p>
 
         <button
+          onClick={() => addToCart(product)}
           className="
             mt-4
             w-full
