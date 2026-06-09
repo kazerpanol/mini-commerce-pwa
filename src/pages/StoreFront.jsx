@@ -2,9 +2,7 @@ import Navbar from "../components/layout/Navbar";
 import ProductGrid from "../components/product/ProductGrid";
 import Cart from "../components/cart/Cart";
 
-import { initialProducts } from "../data/products";
-
-function Storefront() {
+function Storefront({ products }) {
   return (
     <>
       <Navbar />
@@ -13,7 +11,7 @@ function Storefront() {
         <main className="flex-1 p-8">
           <h1 className="text-3xl font-bold mb-8">Featured Products</h1>
 
-          <ProductGrid products={initialProducts} />
+          <ProductGrid products={products} />
         </main>
 
         <Cart />

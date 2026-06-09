@@ -12,7 +12,7 @@ function Cart() {
       ) : (
         <>
           <div className="space-y-3">
-            {cart.map((item) => (
+            {cart.map((item, index) => (
               <div key={item.id} className="flex justify-between">
                 <div>
                   <p className="font-medium">{item.name}</p>
