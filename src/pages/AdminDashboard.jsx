@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Navbar from "../components/layout/Navbar";
 import { saveProduct } from "../services/productService";
+import OfflineBanner from "../components/layout/OfflineBanner";
 
 function AdminDashboard({ products, setProducts }) {
   const [name, setName] = useState("");
@@ -35,6 +36,7 @@ function AdminDashboard({ products, setProducts }) {
 
   return (
     <>
+      <OfflineBanner />
       <Navbar />
 
       <div className="max-w-7xl mx-auto p-6">
